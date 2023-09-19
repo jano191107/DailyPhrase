@@ -1,0 +1,33 @@
+# main.kv
+BoxLayout:
+ orientation: 'vertical'
+
+ Label:
+     text: 'Sube un flash on'
+    size_hint_y: 0.1
+
+ Image:
+      source: 'imagen_de_perfil.jpg'
+      size_hint: (None, None)
+      size: (100, 100)
+ TextInput:
+    id: frase_input
+    hint_text: 'Escribe tu frase'
+    size_hint_y: 0.2
+Button:
+   text: 'Subir'
+  on_press: app.subir_frase(frase_input.text)
+#main.py
+import kivy
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.image import Image
+class MiApp(App):
+   def build(self):
+      return Builder.load_file("main.kv)
+def subir_frase(self, frase):
+perfil = self.root.ids.perfil
+perfil.source = 'nueva_imagen_de_perfil.jpg'
+self.root.ids.frase_input.text = ''
+if _ _name_ _ == "_ _main_ _":
+MiApp().run()
